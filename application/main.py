@@ -33,9 +33,12 @@ def redirect_short(short):
 @app.route("/all_urls", methods=["POST","GET"])
 def all_urls():
     if request.method == "POST":
-        pass
+        if database.delete_row(request.form.get("delete")):
+            return render_template("urls.tpl",title="All URLS", urls=database.get_all_db_rows(),message="Entry deleted")
+        else:
+            return render_template("urls.tpl",title="All URLS", urls=database.get_all_db_rows(),message="Error deleting entry")
     else:
-        return render_template("urls.tpl", urls=database.get_all_db_rows())
+        return render_template("urls.tpl",title="All URLS", urls=database.get_all_db_rows())
 
 if __name__ == "__main__":
     app.run("0.0.0.0", 8080,debug=True)
