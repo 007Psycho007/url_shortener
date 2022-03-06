@@ -9,4 +9,4 @@ This project is lightweight URL shortener with Flask and a SQLite DB in the Back
 - Can request the short url via a long url if it exists
 
 
-The inspiration for the project came from the following tutorial: https://www.youtube.com/watch?v=YI16KWyA3M0
+The inspiration for the project came from the following tutorial: https://www.youtube.com/watch?v=YI16KWyA3M0 but this project does not use any code from the tutorial
