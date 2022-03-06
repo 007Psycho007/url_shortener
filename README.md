@@ -12,6 +12,6 @@ This project is lightweight URL shortener with Flask, SQLite and Pico CSS. It ca
 The inspiration for the project came from the following tutorial: https://www.youtube.com/watch?v=YI16KWyA3M0 but this project does not use any code from the tutorial
 
 Sources: 
-Flask: https://flask.palletsprojects.com/en/2.0.x/
-SQLite: https://sqlite.org/index.html
-Pico CSS: https://picocss.com
+- Flask: https://flask.palletsprojects.com/en/2.0.x/
+- SQLite: https://sqlite.org/index.html
+- Pico CSS: https://picocss.com
