@@ -40,5 +40,5 @@ def all_urls():
     else:
         return render_template("urls.tpl",title="All URLS", urls=database.get_all_db_rows())
 
-if __name__ == "__main__":
-    app.run("0.0.0.0", 8080,debug=True)
+#if __name__ == "__main__":
+#    app.run("0.0.0.0", 80)

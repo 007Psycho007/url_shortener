@@ -52,7 +52,7 @@ class url_model():
         Returns:
             tuple | bool: Returns the dataset if its a Fetch, otherwise it returns True on a successful Commit
         """
-        conn = lite.connect("application/db/urls.sqlite")
+        conn = lite.connect("db/urls.sqlite")
         c = conn.cursor()
         data = c.execute(query,parameters)
         if fetchtype == 1:
