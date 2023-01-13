@@ -53,15 +53,11 @@ class url_model():
         Returns:
             tuple | bool: Returns the dataset if its a Fetch, otherwise it returns True on a successful Commit
         """
-        user=str(os.environ.get("DB_USER")),
-        host=str(os.environ.get("DB_HOST")),
-        database=str(os.environ.get("DB_NAME")),
-        password=str(os.environ.get("DB_PASS"))
-        conn = mysql.connector(
-            user=user,
-            host=host,
-            database=database,
-            password=password
+        conn = mysql.connector.connect(
+            user=str(os.environ.get("DB_USER")),
+            host=str(os.environ.get("DB_HOST")),
+            database=str(os.environ.get("DB_NAME")),
+            password=str(os.environ.get("DB_PASS"))
         )
         c = conn.cursor()
         data = c.execute(query,parameters)
