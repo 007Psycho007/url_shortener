@@ -1,0 +1,11 @@
+[Unit]
+Description=Flask web server
+[Install]
+WantedBy=multi-user.target
+[Service]
+WorkingDirectory=/opt/url_shortener/application
+PermissionsStartOnly=true
+ExecStart=/home/jpeterhaensel/anaconda3/envs/url_shortener/bin/python3 run.py
+TimeoutSec=600
+Restart=on-failure
+RuntimeDirectoryMode=755
