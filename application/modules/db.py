@@ -1,6 +1,6 @@
 import mysql.connector
 import random, string
-from os import environ
+import os
 
 class UrlExistsError(Exception):
     pass
@@ -54,10 +54,10 @@ class url_model():
             tuple | bool: Returns the dataset if its a Fetch, otherwise it returns True on a successful Commit
         """
         conn = mysql.connector(
-            user = str(environ.get("DB_USER")),
-            host = str(environ.get("DB_HOST")),
-            database = str(environ.get("DB_NAME")),
-            password = str(environ.get("DB_PASS"))
+            user = str(os.environ.get("DB_USER")),
+            host = str(os.environ.get("DB_HOST")),
+            database = str(os.environ.get("DB_NAME")),
+            password = str(os.environ.get("DB_PASS"))
         )
         c = conn.cursor()
         data = c.execute(query,parameters)
