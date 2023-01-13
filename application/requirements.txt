@@ -1,3 +1,4 @@
 flask
 validators
 waitress
+mysql-connector-python
