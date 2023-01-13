@@ -1,0 +1,20 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/url_shortener
+hooks:
+  AfterInstall:
+    - location: deploy/install_server.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: deploy/server_start.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: deploy/server_stop.sh
+      timeout: 300
+      runas: root
+
+
