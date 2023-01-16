@@ -9,31 +9,31 @@ class UrlExistsError(Exception):
 
 class url_model():
     def __init__(self) -> None:
-        query ="CREATE TABLE IF NOT EXISTS urls(short varchar(5),long varchar(255));"
+        query ="CREATE TABLE IF NOT EXISTS urls(short varchar(5),long_url varchar(255));"
         self.__sql_query(query)
         
     def get_short_from_long(self,long: str) -> tuple:
-        query = "SELECT short FROM urls WHERE long=?"
+        query = "SELECT short FROM urls WHERE long_url=?"
         return self.__sql_query(query,(long,),fetchtype=2)[0]
     
     def get_long_from_short(self,short) -> tuple:
-        query = "SELECT long FROM urls WHERE short=?"
+        query = "SELECT long_url FROM urls WHERE short=?"
         return self.__sql_query(query,(short,),fetchtype=2)[0]
     
     def create_short_from_long(self,long) -> str:
-        if self.__sql_query("SELECT True FROM urls WHERE long = ?;",(long,)):
+        if self.__sql_query("SELECT True FROM urls WHERE long_url = ?;",(long,)):
             raise UrlExistsError("The Value already exists in the database")
         while True:
             short = ''.join(random.choice(string.ascii_letters) for x in range(5))
             print(short)
             if not self.__sql_query("SELECT True FROM urls WHERE short = ?;",(short,)):
                 break
-        query = f"INSERT INTO urls(short,long) VALUES(?,?)"
+        query = f"INSERT INTO urls(short,long_url) VALUES(?,?)"
         self.__sql_query(query,(short,long),fetchtype=3)
         return short
     
     def get_all_db_rows(self):
-        query = "SELECT short,long FROM urls;"
+        query = "SELECT short,long_url FROM urls;"
         return self.__sql_query(query)
     
     def delete_row(self,short):
