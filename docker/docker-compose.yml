@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=nzNBK4j+Mp9s01J52F8BEjyf54FCsPuIkjX1WerIgK4=
+      - MYSQL_PASSWORD=test
+      - MYSQL_DATABASE=testdb
+      - MYSQL_USER=testuser
+    ports:
+      - "3306:3306"
