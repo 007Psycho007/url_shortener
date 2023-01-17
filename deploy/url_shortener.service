@@ -5,6 +5,7 @@ WantedBy=multi-user.target
 [Service]
 WorkingDirectory=/opt/url_shortener/application
 PermissionsStartOnly=true
+EnviromentFile=/etc/systemd/system/url_shortener.env
 ExecStart=/usr/bin/python3 run.py
 TimeoutSec=600
 Restart=on-failure
