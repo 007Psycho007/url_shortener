@@ -9,6 +9,9 @@ app.config.update(
 servername = "http://localhost:8080/" #Own URL or serverip
 database = db.url_model()
 
+@app.route('/favicon.ico', methods= ["POST","GET"])
+def fav():
+    return "Favicon not found", 400
 @app.route('/', methods= ["POST","GET"])
 def index():
     if request.method == "POST":
