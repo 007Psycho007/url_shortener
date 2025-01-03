@@ -38,6 +38,3 @@ jobs:
       # Step 5: Verify the image (optional)
       - name: Image digest
         run: echo "Image built and pushed with digest ${{ steps.docker-build-push.outputs.digest }}"
-
-      psycho007/url-shortener:latest
-      psycho007/url-shortener:${github.sha}
