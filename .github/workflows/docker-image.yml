@@ -33,7 +33,7 @@ jobs:
           push: true  # Push the image to the registry
           tags: |
             psycho007/url-shortener:latest
-            psycho007/url-shortener:${github.sha}
+            psycho007/url-shortener:${{github.sha}}
 
       # Step 5: Verify the image (optional)
       - name: Image digest
